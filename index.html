@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LEAN HUB — автоматизация, бережливое производство, боты</title>
-  <meta name="description" content="Яна Дробышевская. Анализ и автоматизация бизнес‑процессов, консалтинг по бережливому производству, разработка ботов. LEAN HUB." />
+  <meta name="description" content="Яна Дробышевская. Анализ и автоматизация бизнес-процессов, консалтинг по бережливому производству, разработка ботов. LEAN HUB." />
   <meta property="og:title" content="LEAN HUB — автоматизация и боты" />
   <meta property="og:description" content="Анализ процессов, автоматизация, боты. Яна Дробышевская — LEAN HUB." />
   <meta property="og:type" content="website" />
@@ -26,8 +26,9 @@
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
     a{color:inherit;text-decoration:none}
-    img{max-width:100%;height:auto}
+    img,video{max-width:100%;height:auto;display:block}
     .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
     /* NAV */
     .nav{position:sticky;top:0;z-index:50;background:linear-gradient(180deg, rgba(11,11,12,.9) 0%, rgba(11,11,12,.6) 90%, rgba(11,11,12,0) 100%);backdrop-filter:saturate(1.2) blur(6px);}
     .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
@@ -38,46 +39,44 @@
       display:grid;place-items:center;color:#fff;font-weight:800;letter-spacing:.5px;}
     .brand-title{font-weight:800;letter-spacing:.8px}
     .nav a.btn{margin-left:16px}
+
     /* BUTTONS */
     .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;padding:12px 18px;border-radius:999px;position:relative;isolation:isolate}
     .btn-cta{background:linear-gradient(90deg,var(--grad1),var(--grad2));}
     .btn-cta:hover{filter:brightness(1.08)}
     .btn-ghost{border:1px solid var(--ring);}
     .btn-ghost:hover{border-color:transparent;box-shadow:0 0 0 3px rgba(255,255,255,.06) inset}
+
     /* HERO */
     .hero{padding:72px 0 40px}
-    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
-    .kicker{color:var(--muted);font-weight:600;letter-spacing:.12em;text-transform:uppercase}
-    h1{font-size:44px;line-height:1.06;margin:.3em 0 .4em;font-weight:800}
-    .lead{font-size:18px;color:#e8e8ee;opacity:.9}
     .pill{display:inline-flex;gap:10px;align-items:center;padding:8px 12px;border:1px solid var(--ring);border-radius:999px;color:#e9e9f3;background:rgba(255,255,255,.02)}
-    .hero-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-    .card{background:var(--card);border:1px solid var(--ring);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
-    .card h3{margin:0 0 6px;font-size:16px}
     .muted{color:var(--muted)}
+
     /* SECTIONS */
     section{padding:56px 0}
     .section-title{font-size:28px;font-weight:800;margin:0 0 22px}
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .service{background:var(--card);border:1px solid var(--ring);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
     .service h3{margin:8px 0 8px}
+
     /* CASES */
     .case{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.0));border:1px solid var(--ring);border-radius:var(--radius);padding:22px}
     .case strong{background:linear-gradient(90deg,var(--grad1),var(--grad2));-webkit-background-clip:text;background-clip:text;color:transparent}
+
     /* CONTACT */
     .contact{display:flex;align-items:center;justify-content:space-between;gap:18px;background:radial-gradient(1200px 500px at 20% -10%, rgba(142,59,255,.25), rgba(255,47,179,.15) 40%, transparent 70%);border:1px solid var(--ring);border-radius:var(--radius);padding:28px}
     .contact h3{margin:0 0 6px}
+
     /* FOOTER */
     footer{padding:30px 0;color:var(--muted);border-top:1px solid var(--ring)}
+
     /* REVEAL ANIMATIONS */
     .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease}
     .reveal.show{opacity:1;transform:none}
+
     /* RESPONSIVE */
     @media (max-width: 960px){
-      .hero-grid{grid-template-columns:1fr;gap:28px}
-      .hero-cards{grid-template-columns:1fr}
       .grid-3{grid-template-columns:1fr}
-      h1{font-size:34px}
     }
   </style>
 </head>
@@ -85,7 +84,7 @@
   <header class="nav">
     <div class="wrap nav-inner">
       <div class="brand">
-        <!-- Замените на <img src="assets/logo.png" alt="LEAN HUB" class="logo-img"> при необходимости -->
+        <!-- Заменить на <img src="logo.png" alt="LEAN HUB" class="logo-img"> при необходимости -->
         <div class="logo">LH</div>
         <div class="brand-title">LEAN HUB</div>
       </div>
@@ -98,39 +97,26 @@
   </header>
 
   <main>
-    <!-- HERO + About -->
+    <!-- HERO: только видео-аватар + кнопки -->
     <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <span class="kicker">Яна Дробышевская</span>
-          <h1>Автоматизирую процессы, внедряю практики бережливого производства и создаю ботов</h1>
-          <p class="lead">Помогаю бизнесу выявлять узкие места, сокращать издержки и повышать эффективность. От экспресс‑аудита до внедрения решений «под ключ» в рамках сообщества <strong>LEAN HUB</strong>.</p>
-          <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+      <div class="wrap">
+        <div style="max-width:920px;margin:0 auto">
+          <div class="reveal" style="border-radius:20px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--ring)">
+            <video autoplay muted loop playsinline poster="" style="width:100%;height:auto">
+              <source src="avatar.mp4" type="video/mp4">
+              Ваш браузер не поддерживает видео.
+            </video>
+          </div>
+
+          <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
             <a class="btn btn-cta" href="https://t.me/lean_hub" target="_blank" rel="noopener">Написать в Telegram</a>
             <a class="btn btn-ghost" href="#services">Смотреть услуги</a>
           </div>
-          <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+
+          <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
             <span class="pill">Анализ процессов</span>
             <span class="pill">Автоматизация</span>
-            <span class="pill">ИИ‑боты</span>
-          </div>
-        </div>
-        <div class="hero-cards">
-          <div class="card reveal">
-            <h3>Экспертное позиционирование</h3>
-            <p class="muted">10+ направлений автоматизации: производство, учёт, заявки, интеграции и др. Глубокий анализ «как есть» и дорожная карта «как должно быть».</p>
-          </div>
-          <div class="card reveal">
-            <h3>Бережливое производство</h3>
-            <p class="muted">Внедрение инструментов Lean: устранение потерь, стандартизация, визуализация процессов, рост качества без избыточных затрат.</p>
-          </div>
-          <div class="card reveal">
-            <h3>Быстрый старт</h3>
-            <p class="muted">Экспресс‑аудит и прототип в короткие сроки. Поэтапное внедрение без остановки бизнеса.</p>
-          </div>
-          <div class="card reveal">
-            <h3>Под ключ</h3>
-            <p class="muted">От идеи и ТЗ — до внедрения и обучения команды. Сопровождение и измеримая метрика результата.</p>
+            <span class="pill">ИИ-боты</span>
           </div>
         </div>
       </div>
@@ -154,7 +140,7 @@
           <div class="service reveal">
             <div class="pill" aria-hidden="true">Боты</div>
             <h3>Разработка ботов</h3>
-            <p class="muted">Телеграм‑боты, ИИ‑ассистенты и сервисы: приём заявок, напоминания, маршрутизация запросов, интеграции с CRM/учётными системами.</p>
+            <p class="muted">Телеграм-боты, ИИ-ассистенты и сервисы: приём заявок, напоминания, маршрутизация запросов, интеграции с CRM/учётными системами.</p>
           </div>
         </div>
       </div>
@@ -180,9 +166,9 @@
           </article>
 
           <article class="case reveal">
-            <h3><strong>Приём заявок для малого бизнеса (ИИ‑менеджер)</strong></h3>
-            <p><strong>Задача:</strong> терялись клиенты из‑за долгих ответов на заявки.</p>
-            <p><strong>Решение:</strong> разработан телеграм‑бот‑менеджер на базе ИИ, принимает заявки и отвечает 24/7.</p>
+            <h3><strong>Приём заявок для малого бизнеса (ИИ-менеджер)</strong></h3>
+            <p><strong>Задача:</strong> терялись клиенты из-за долгих ответов на заявки.</p>
+            <p><strong>Решение:</strong> разработан телеграм-бот-менеджер на базе ИИ, принимает заявки и отвечает 24/7.</p>
             <p><strong>Результат:</strong> скорость обработки выросла в 5 раз, потерянных заявок нет.</p>
           </article>
         </div>
