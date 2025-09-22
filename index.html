@@ -88,4 +88,193 @@
     .case strong{background:linear-gradient(90deg,var(--grad1),var(--grad2));-webkit-background-clip:text;background-clip:text;color:transparent}
 
     /* Contact */
-    .contact{display:flex;align-items:center;justify-content:space-between;gap:18px;background:radial-gradient(1200px 500px at 20% -10%, rgba(142,59,255,.2
+    .contact{display:flex;align-items:center;justify-content:space-between;gap:18px;background:radial-gradient(1200px 500px at 20% -10%, rgba(142,59,255,.25), rgba(255,47,179,.15) 40%, transparent 70%);border:1px solid var(--ring);border-radius:var(--radius);padding:28px}
+    .contact h3{margin:0 0 6px}
+
+    /* Footer */
+    footer{padding:30px 0;color:var(--muted);border-top:1px solid var(--ring)}
+
+    /* Reveal */
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease}
+    .reveal.show{opacity:1;transform:none}
+
+    /* ===== Mobile tweaks ===== */
+    @media (max-width: 1024px){
+      :root{ --overlayPadTop: 24svh; }
+      .hero-grid{gap:28px}
+    }
+    @media (max-width: 820px){
+      :root{ --heroH: 85svh; --overlayPadTop: 20svh; }
+      .hero-grid{grid-template-columns:1fr;gap:24px}
+      h1{font-size:clamp(28px,7vw,34px)}
+      .lead{font-size:16px}
+      .text-plate{padding:14px;background:rgba(0,0,0,.5)}
+      .hero-cards{grid-template-columns:1fr}
+      .btn{padding:10px 14px;font-size:14px}
+      .intro-hero video{object-position:center top}
+    }
+    @media (max-width: 480px){
+      :root{ --heroH: 90svh; --overlayPadTop: 18svh; }
+      .wrap{padding:0 16px}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <div class="brand">
+        <div class="logo">LH</div>
+        <div class="brand-title">LEAN HUB</div>
+      </div>
+      <nav>
+        <a href="#services" class="btn btn-ghost">Услуги</a>
+        <a href="#cases" class="btn btn-ghost">Кейсы</a>
+        <a href="https://t.me/lean_hub" target="_blank" rel="noopener" class="btn btn-cta">Связаться в Telegram</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ВИДЕО ФОНОМ + КОНТЕНТ НАВЕРХУ -->
+  <section class="intro-hero" aria-label="Видеозаставка">
+    <div class="video-wrap">
+      <video autoplay muted loop playsinline>
+        <source src="avatar.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+      </video>
+    </div>
+
+    <div class="overlay">
+      <div class="wrap hero-grid">
+        <!-- Левая колонка (заголовок и текст) -->
+        <div class="text-plate">
+          <span class="kicker">ЯНА ДРОБЫШЕВСКАЯ</span>
+          <h1>Автоматизирую процессы, внедряю практики бережливого производства и создаю ботов</h1>
+          <p class="lead">Помогаю бизнесу выявлять узкие места, сокращать издержки и повышать эффективность. От экспресс-аудита до внедрения решений «под ключ» в рамках сообщества <strong>LEAN HUB</strong>.</p>
+          <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+            <a class="btn btn-cta" href="https://t.me/lean_hub" target="_blank" rel="noopener">Написать в Telegram</a>
+            <a class="btn btn-ghost" href="#services">Смотреть услуги</a>
+          </div>
+          <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+            <span class="pill">Анализ процессов</span>
+            <span class="pill">Автоматизация</span>
+            <span class="pill">ИИ-боты</span>
+          </div>
+        </div>
+
+        <!-- Правая колонка (карточки) -->
+        <div class="hero-cards">
+          <div class="card reveal">
+            <h3>Экспертное позиционирование</h3>
+            <p class="muted">10+ направлений автоматизации: производство, учёт, заявки, интеграции и др. Глубокий анализ «как есть» и дорожная карта «как должно быть».</p>
+          </div>
+          <div class="card reveal">
+            <h3>Бережливое производство</h3>
+            <p class="muted">Внедрение инструментов Lean: устранение потерь, стандартизация, визуализация процессов, рост качества без избыточных затрат.</p>
+          </div>
+          <div class="card reveal">
+            <h3>Быстрый старт</h3>
+            <p class="muted">Экспресс-аудит и прототип в короткие сроки. Поэтапное внедрение без остановки бизнеса.</p>
+          </div>
+          <div class="card reveal">
+            <h3>Под ключ</h3>
+            <p class="muted">От идеи и ТЗ — до внедрения и обучения команды. Сопровождение и измеримая метрика результата.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- УСЛУГИ -->
+  <section id="services">
+    <div class="wrap">
+      <h2 class="section-title">Услуги</h2>
+      <div class="grid-3">
+        <div class="service reveal">
+          <div class="pill" aria-hidden="true">Консалтинг</div>
+          <h3>Анализ процессов и организационный консалтинг</h3>
+          <p class="muted">Выявляю узкие места, формирую карту потока создания ценности, предлагаю улучшения и регламенты. Настраиваю метрики и визуальные доски.</p>
+        </div>
+        <div class="service reveal">
+          <div class="pill" aria-hidden="true">Автоматизация</div>
+          <h3>Автоматизация и интеграции</h3>
+          <p class="muted">От бухгалтерии до производства: уходим от Excel, наводим порядок в данных, подключаем системы и интегрируем между собой.</p>
+        </div>
+        <div class="service reveal">
+          <div class="pill" aria-hidden="true">Боты</div>
+          <h3>Разработка ботов</h3>
+          <p class="muted">Телеграм-боты, ИИ-ассистенты и сервисы: приём заявок, напоминания, маршрутизация запросов, интеграции с CRM/учётными системами.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- КЕЙСЫ -->
+  <section id="cases">
+    <div class="wrap">
+      <h2 class="section-title">Кейсы</h2>
+      <div class="grid-3">
+        <article class="case reveal">
+          <h3><strong>Производство</strong></h3>
+          <p><strong>Задача:</strong> учёт сырья вёлся вручную, данные терялись, сотрудники тратили время на пересчёты.</p>
+          <p><strong>Решение:</strong> внедрена система автоматического учёта и отчётности.</p>
+          <p><strong>Результат:</strong> снизили потери на 12%, ускорили инвентаризацию в 3 раза.</p>
+        </article>
+
+        <article class="case reveal">
+          <h3><strong>Бухгалтерия</strong></h3>
+          <p><strong>Задача:</strong> ведение учёта в Excel приводило к ошибкам и задержкам в отчётности.</p>
+          <p><strong>Решение:</strong> автоматизация бухгалтерского учёта и настройка контроля операций.</p>
+          <p><strong>Результат:</strong> отчётность формируется автоматически, ошибки исключены, работа ускорилась на 40%.</p>
+        </article>
+
+        <article class="case reveal">
+          <h3><strong>Приём заявок для малого бизнеса (ИИ-менеджер)</strong></h3>
+          <p><strong>Задача:</strong> терялись клиенты из-за долгих ответов на заявки.</p>
+          <p><strong>Решение:</strong> разработан телеграм-бот-менеджер на базе ИИ, принимает заявки и отвечает 24/7.</p>
+          <p><strong>Результат:</strong> скорость обработки выросла в 5 раз, потерянных заявок нет.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- КОНТАКТЫ -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact reveal">
+        <div>
+          <h3>Готовы обсудить ваш проект?</h3>
+          <p class="muted">Напишите в Telegram — отвечу лично.</p>
+        </div>
+        <a class="btn btn-cta" href="https://t.me/lean_hub" target="_blank" rel="noopener" aria-label="Написать в Telegram">Написать в Telegram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФУТЕР -->
+  <footer>
+    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div>© <span id="year"></span> LEAN HUB — Яна Дробышевская</div>
+      <div class="muted">Сайт на одном экране • RU</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Плавный скролл
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href');
+        if(id.length>1){ e.preventDefault(); document.querySelector(id)?.scrollIntoView({behavior:'smooth'}); }
+      })
+    });
+
+    // Появление блоков
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+    },{threshold:.15});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>
